@@ -1,24 +1,33 @@
 <?php
-$password_characters = $_GET['characters'];
 
-function generaPasswordCasuale($lunghezza)
+function generaPasswordCasuale($lunghezzaPassword)
 {
     $caratteri = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+';
     $password = '';
 
-    for ($i = 0; $i < $lunghezza; $i++) {
+    for ($i = 0; $i < $lunghezzaPassword; $i++) {
         $carattereCasuale = $caratteri[rand(0, strlen($caratteri) - 1)];
         $password .= $carattereCasuale;
     }
 
-    return ($password);
+    return $password;
 }
 
-if (isset($password_characters)) {
-    $passwordGenerata = '';
-    $lunghezzaPassword = $password_characters;
+$passwordGenerata = '';
 
-    $passwordGenerata = generaPasswordCasuale($lunghezzaPassword);
+if (isset($_GET['characters'])) {
+
+    $lunghezzaPassword = $_GET['characters'];
+    if ($lunghezzaPassword > 8) {
+        $passwordGenerata = generaPasswordCasuale($lunghezzaPassword);
+    } else {
+        echo
+            "<div class='container'>
+            <div class='alert alert-success' role='alert'>
+                Password non accettata!
+            </div>
+        </div>";
+    }
 }
 
 ?>
