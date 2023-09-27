@@ -18,7 +18,7 @@ $passwordGenerata = '';
 if (isset($_GET['characters'])) {
 
     $lunghezzaPassword = $_GET['characters'];
-    if ($lunghezzaPassword > 8) {
+    if ($lunghezzaPassword >= 8 && $lunghezzaPassword <= 20) {
         $passwordGenerata = generaPasswordCasuale($lunghezzaPassword);
     } else {
         echo
