@@ -23,8 +23,8 @@ if (isset($_GET['characters'])) {
     } else {
         echo
             "<div class='container'>
-            <div class='alert alert-success' role='alert'>
-                Password non accettata!
+            <div class='alert alert-danger my-4' role='alert'>
+                Non è possibile creare la password!
             </div>
         </div>";
     }

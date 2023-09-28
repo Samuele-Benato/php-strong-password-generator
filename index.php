@@ -38,8 +38,8 @@ include __DIR__ . './functions.php';
     <script type="text/javascript" src="./js/main.js" defer></script> -->
 </head>
 
-<body>
-    <div class="container my-4">
+<body data-bs-theme="dark">
+    <div class="container my-4 mx-auto">
         <form action="./" method="GET">
             <label class="fw-semibold" for="characters">N° Characters</label>
             <input type="number" min="8" max="20" step="1" name="characters" id="characters"
