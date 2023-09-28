@@ -40,6 +40,7 @@ include __DIR__ . './functions.php';
 
 <body data-bs-theme="dark">
     <div class="container my-4 mx-auto">
+        <h1 class="mb-3">PHP Strong Password Generator</h1>
         <form action="./" method="GET">
             <label class="fw-semibold" for="characters">N° Characters</label>
             <input type="number" min="8" max="20" step="1" name="characters" id="characters"
